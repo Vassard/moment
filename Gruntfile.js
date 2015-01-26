@@ -33,6 +33,39 @@ module.exports = function (grunt) {
             sauceLabs : (grunt.file.exists('.sauce-labs.creds') ?
                     grunt.file.readJSON('.sauce-labs.creds') : {})
         },
+        es6_bundle: {
+            options: {
+                srcDir: 'lib',
+                templateDir: 'templates'
+            },
+            globals: {
+                template: 'globals',
+                output: 'build/globals/moment.js'
+            },
+            amd: {
+                template: 'amd',
+                output: 'build/amd/moment.js'
+            },
+            amd_named: {
+                template: 'amd-named',
+                output: 'build/amd-named/moment.js'
+            }
+        },
+        '6to5': {
+            options: {
+                sourceMap: true,
+            },
+            commonjs: {
+                options: {
+                    modules: 'common'
+                },
+                expand: true,
+                cwd: 'lib',
+                src: ['**/*.js'],
+                dest: 'build/commonjs',
+                ext: '.js',
+            },
+        },
         karma : {
             options: {
                 frameworks: ['nodeunit'],

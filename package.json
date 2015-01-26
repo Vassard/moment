@@ -50,6 +50,8 @@
         "grunt": "latest",
         "nodeunit": "latest",
         "benchmark": "latest",
+        "es6-module-transpiler": "latest",
+        "grunt-6to5": "latest",
         "grunt-contrib-clean": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-nodeunit": "latest",
